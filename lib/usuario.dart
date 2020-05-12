@@ -54,7 +54,20 @@ class Usuario {
   
   @override
   String toString() {
-    return 'Usuario(nome: $nome, nascimento: $nascimento, cep: $cep, cpf: $cpf, telefone: $telefone, televisao: $televisao, internet: $internet)';
+    String dados = 'Nome: $nome, \nNascimento: $nascimento, \nCEP: $cep, \nCPF: $cpf \n Serviços:';
+
+    if (televisao){
+      dados = ('$dados \n-Televisão');
+    }
+    if (internet){
+      dados = ('$dados \n-Internet');
+    }
+    if (telefone){
+      dados = ('$dados \n-Telefone');
+    }
+
+    return dados;
+    
   }
 
   @override

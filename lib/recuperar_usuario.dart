@@ -40,8 +40,7 @@ class RecuperarDadosUsuario extends StatelessWidget {
                     String dados = await getData(cpf);
                     if (dados != "") {
                       textoConfirmacao(context, "Dados do cliente", dados);
-                    }
-                    else {
+                    } else {
                       textoConfirmacao(context, "Erro", "CPF não cadastrado.");
                     }
                   },
@@ -58,7 +57,7 @@ class RecuperarDadosUsuario extends StatelessWidget {
 
 Future<String> getData(int cpf) async {
   String dados = "";
-  
+
   await Firestore.instance
       .collection("usuario")
       .getDocuments()
@@ -72,7 +71,6 @@ Future<String> getData(int cpf) async {
     });
   });
 
-  debugPrint("dados: $dados");
   return dados;
 }
 
@@ -86,7 +84,8 @@ void textoConfirmacao(context, String status, String mensagem) {
         actions: <Widget>[
           FlatButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Menu()));
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => Menu()));
               },
               child: Text("OK")),
         ],
