@@ -59,7 +59,7 @@ Future<String> getData(int cpf) async {
   String dados = "";
 
   await Firestore.instance
-      .collection("usuario")
+      .collection("cliente")
       .getDocuments()
       .then((QuerySnapshot snapshot) {
     snapshot.documents.forEach((f) {

@@ -207,7 +207,7 @@ class _CadastrarNovoUsuarioState extends State<CadastrarNovoUsuario> {
                           );
 
                           await Firestore.instance
-                              .collection("usuario")
+                              .collection("cliente")
                               .add(novoUsuario.toMap());
 
                           textoConfirmacao(context);
